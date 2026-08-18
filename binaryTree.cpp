@@ -43,7 +43,7 @@ void inTree(Node* root){                   //IN ORDER TREE
     cout<<root->data<<" ";
     inTree(root->right);
 }
-void postTree(Node* root){                   //IN ORDER TREE
+void postTree(Node* root){                   //POST ORDER TREE
     if(root == NULL){ return; }
     postTree(root->left);
     postTree(root->right);
@@ -117,9 +117,9 @@ void topView(Node* root){
 
         q.pop();
 
-        if(m.find(hds) == m.end()){    ///
-           m[hds] = curr->data;             // only this for bottom view
-        }                               ///
+        if(m.find(hds) == m.end()){    
+           m[hds] = curr->data;             // First time seeing this HD → Top View
+        }                               
 
         if(curr->left != NULL){
             q.push({curr->left,hds-1});
