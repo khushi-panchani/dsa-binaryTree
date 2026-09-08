@@ -142,6 +142,18 @@ void kthLevel(Node* root,int k){
     kthLevel(root->left,k-1);
     kthLevel(root->right,k-1);
 }
+int sum(Node* root){
+    if(root == NULL) return 0;
+
+    int left = sum(root->left);
+    int right = sum(root->right);
+
+    root->data +=  left + right;
+
+    return root->data;
+
+}
+
 
 
 int main(){
@@ -163,7 +175,11 @@ int main(){
     // cout<<"node is : "<<cntNode(root)<<endl;
     // cout<<"sum is : "<<sumNode(root)<<endl;
     // topView(root);
-    kthLevel(root,2);
+    // kthLevel(root,2);
+    // sum(root);
+    // cout<<"pre order : ";   
+    // preTree(root);
+    // cout<<endl;
 
 
     return 0;
