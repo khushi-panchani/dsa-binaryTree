@@ -1,3 +1,14 @@
+/*
+1. Build BST by inserting each array element.
+2. Insert smaller values to the left and larger values to the right.
+3. Inorder traversal prints BST values in sorted order.
+4. Search compares the key with the current node and moves left or right.
+5. Delete a leaf node by removing it and returning NULL.
+6. Delete a node with one child by returning its child.
+7. Delete a node with two children using the inorder successor.
+8. Always return root after insertion and deletion.
+*/
+
 class Node{
     public:
     int data;
