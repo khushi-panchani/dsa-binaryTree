@@ -9,6 +9,7 @@
 
 class Solution {
 public:
+
     TreeNode* prev = NULL;
     int minDiffInBST(TreeNode* root) {
         if(root == NULL){
