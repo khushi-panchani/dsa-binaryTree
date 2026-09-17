@@ -1,0 +1,38 @@
+// Approach: Inorder Traversal + Previous Node
+//
+// 1. Inorder traversal of BST gives nodes in sorted order.
+// 2. Use prev pointer to store the previously visited node.
+// 3. Find the difference between current node and prev node.
+// 4. Update ans with the minimum difference.
+// 5. Recursively traverse left, root, and right.
+// 6. Return the minimum difference found.
+
+class Solution {
+public:
+    TreeNode* prev = NULL;
+    int minDiffInBST(TreeNode* root) {
+        if(root == NULL){
+            return INT_MAX;
+        }
+        
+        int ans = INT_MAX;
+        
+        if(root -> left != NULL){
+            int leftmin = minDiffInBST(root->left);
+            ans = min(ans , leftmin);
+        }
+        
+        if(prev != NULL){
+            ans = min(ans , root->val - prev->val);
+        }
+        
+        prev = root;
+        
+        if(root -> right != NULL){
+            int rightmin = minDiffInBST(root->right);
+            ans = min(ans , rightmin);
+        }
+        
+        return ans;
+    }
+};
